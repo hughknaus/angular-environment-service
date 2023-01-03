@@ -15,6 +15,8 @@ export class HelloComponent implements OnInit {
 
   ngOnInit() {
     console.log(`HelloComponent::ngOnInit`);
-    console.log(`apiUrl = ${this.envService.getValue('apiUrl')}`);
+    console.log(
+      `HelloComponent::ngOnInit::apiUrl = ${this.envService.getValue('apiUrl')}`
+    );
   }
 }
