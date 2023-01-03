@@ -9,9 +9,12 @@ import { EnvironmentService } from './environment.service';
 export class HelloComponent implements OnInit {
   @Input() name: string;
 
-  constructor(private envService: EnvironmentService) {}
+  constructor(private envService: EnvironmentService) {
+    console.log(`HelloComponent::Ctor`);
+  }
 
   ngOnInit() {
-    this.name += ` ${this.envService.getValue('apiUrl')}`;
+    console.log(`HelloComponent::ngOnInit`);
+    console.log(`apiUrl = ${this.envService.getValue('apiUrl')}`);
   }
 }

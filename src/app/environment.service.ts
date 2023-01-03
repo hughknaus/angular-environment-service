@@ -12,10 +12,12 @@ export class EnvironmentService {
 
   // We need @Optional to be able start app without providing environment file
   constructor(@Optional() @Inject(ENVIRONMENT) environment: any) {
+    console.log(`EnvironmentService::Ctor`);
     this.environment = environment !== null ? environment : {};
   }
 
   getValue(key: string, defaultValue?: any): any {
+    console.log(`EnvironmentService::getValue::key`, key);
     return this.environment[key] || defaultValue;
   }
 }
