@@ -4,5 +4,5 @@ import { IEnvironment } from '../environment-interface';
 
 export const environment: IEnvironment = {
   production: false,
-  apiUrl: 'https://default.api.url',
+  apiUrl: window['environment']?.apiUrl ?? 'http://lastresort.api.url',
 };

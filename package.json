@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run build && npm run runtime-config-test && npm run serve",
+    "runtime-config-test": "bash ./scripts/runtime-config.sh setConfig ./dist/angular-environment-service https://test.api.url false",
+    "serve": "http-server ./dist/angular-environment-service -p 8100 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -28,6 +30,7 @@
     "@angular/cli": "^14.0.0",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
+    "http-server": "^14.1.1",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
